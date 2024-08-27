@@ -1,4 +1,3 @@
-// cluster.js
 const cluster = require('cluster');
 const os = require('os');
 const numCPUs = os.cpus().length;
@@ -17,8 +16,7 @@ if (cluster.isMaster) {
     cluster.fork();
   });
 } else {
-  // Workers share the same TCP connection in this case
-  // This will start the express app on each worker
+  
   require('./app');
 
   console.log(`Worker ${process.pid} started`);

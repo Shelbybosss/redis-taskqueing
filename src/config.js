@@ -1,4 +1,3 @@
-// config.js
 module.exports = {
   RATE_LIMIT: {
     MAX_TASKS_PER_SECOND: 1, // 1 task per second
