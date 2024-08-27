@@ -1,46 +1,68 @@
 # Node Task Queue with Rate Limiting
 
 ## Overview
-This project is a Node.js API that implements task queuing with rate limiting. Each user can only process one task per second and 20 tasks per minute. Any tasks exceeding the rate limit are queued and processed later.
+
+This project implements a Node.js API that features task queuing with rate limiting. It ensures that each user can only process one task per second and 20 tasks per minute. Any tasks exceeding these rate limits are queued and processed later.
 
 ## Setup
 
-1. Install dependencies:
-   ```bash
-   npm install
+### Prerequisites
+
+- Node.js
+- npm (Node Package Manager)
+
+### Installation
+
+1. Clone the repository:
+2. Install dependencies:
+3. Start the server:
+
+4. ## Usage
+
+### API Endpoint
+
+- **URL**: `http://localhost:3000/task`
+- **Method**: POST
+
+### Request Body
+
+```json
+{
+"user_id": "123"
+}
 
 
-2. To check Node.js API in Postman, follow these steps:
+Testing with Postman
 
-Step 1: Open Postman
-Launch Postman on your system.
-Step 2: Create a New Request
-Click on the "New" button (or "Create a request").
-Choose "HTTP Request".
-Step 3: Configure the Request
-Method: Set the HTTP method to POST.
+Open Postman.
+Create a new HTTP request:
 
-URL: Enter the URL for your API. 
+Set the method to POST.
+Enter the URL: http://localhost:3000/task
 
-bash
-Copy code
-http://localhost:3000/task
-Headers: Add the Content-Type header:
+
+Set headers:
 
 Key: Content-Type
 Value: application/json
-Body: Switch to the Body tab and select raw.
 
-Choose JSON as the format from the dropdown menu.
-Enter your request body as a JSON object. For example:
-json
-Copy code
-{
-  "user_id": "123"
-}
-Step 4: Send the Request
-Click on the Send button.
-Postman will send the POST request to your Node.js API.
-Step 5: Check the Response
-After you send the request, you will see the response from your API in the Response section of Postman.
-This should contain the output of your task function or any response you've set up in the Express route.
+
+In the request body:
+
+Select 'raw' and choose JSON format.
+Enter the request body (as shown above).
+
+
+Click 'Send' to submit the request.
+Check the response in the Postman interface.
+
+Features
+
+Task queuing system
+Rate limiting: 1 task per second, 20 tasks per minute per user
+Automatic queuing of tasks exceeding rate limits
+
+Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+License
+This project is licensed under the MIT License.
